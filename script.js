@@ -6,7 +6,7 @@ generateJoke();
 function generateJoke() {
     fetch('https://icanhazdadjoke.com/',{
         headers: {'Accept': 'application/json'}
-    }).then(response => response.json()).then(data => joke.innerHTML = `<h3>${data.joke}</h3>` );
+    }).then(response => response.json()).then(data => joke.textContent = data.joke );
 }
 
 jokeBtn.addEventListener('click',()=>generateJoke());
